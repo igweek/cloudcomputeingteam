@@ -34,12 +34,12 @@ const navItems = [
 ];
 
 const metrics = [
-  { value: "云原生", label: "现代应用架构" },
-  { value: "OpenStack", label: "私有云平台" },
-  { value: "Kubernetes", label: "容器编排能力" },
+  { value: "Linux", label: "系统运维基础" },
   { value: "DevOps", label: "自动化运维流程" },
   { value: "云安全", label: "安全治理体系" },
-  { value: "Linux", label: "系统运维基础" },
+  { value: "OpenStack", label: "私有云平台" },
+  { value: "Kubernetes", label: "容器编排能力" },
+  { value: "云原生", label: "现代应用架构" },
 ];
 
 const focusAreas = [
