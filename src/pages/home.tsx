@@ -23,6 +23,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { cn } from "@/lib/utils";
 
 const navItems = [
   { label: "专业定位", id: "position" },
@@ -36,6 +37,9 @@ const metrics = [
   { value: "云原生", label: "现代应用架构" },
   { value: "OpenStack", label: "私有云平台" },
   { value: "K8s", label: "容器编排能力" },
+  { value: "DevOps", label: "自动化运维流程" },
+  { value: "云安全", label: "安全治理体系" },
+  { value: "Linux", label: "系统运维基础" },
 ];
 
 const focusAreas = [
@@ -287,7 +291,7 @@ export default function Home() {
         </nav>
 
         <main>
-          <section id="hero" className="relative min-h-[820px] overflow-hidden bg-navy text-white">
+          <section id="hero" className="relative min-h-[100svh] overflow-hidden bg-navy text-white">
             <img src="/cloud-lab-hero.png" alt="现代云计算实训中心" className="absolute inset-0 h-full w-full object-cover" />
             <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(9,27,45,0.94)_0%,rgba(9,27,45,0.78)_47%,rgba(9,27,45,0.34)_100%)]" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_12%,rgba(199,151,74,0.28),transparent_32%)]" />
@@ -297,7 +301,7 @@ export default function Home() {
               variants={stagger}
               initial="hidden"
               animate="visible"
-              className="relative z-10 mx-auto flex min-h-[820px] max-w-[1240px] flex-col justify-end px-5 pb-10 pt-32 md:px-8"
+              className="relative z-10 mx-auto flex min-h-[100svh] max-w-[1240px] flex-col justify-center px-5 pb-8 pt-28 md:px-8 lg:pb-10 lg:pt-28"
             >
               <div className="grid items-end gap-10 lg:grid-cols-[minmax(0,0.95fr)_380px]">
                 <div className="max-w-3xl">
@@ -354,10 +358,19 @@ export default function Home() {
 
               <motion.div
                 variants={fadeUp}
-                className="mt-16 grid divide-y divide-white/12 overflow-hidden rounded-[1.5rem] border border-white/14 bg-white/10 backdrop-blur md:grid-cols-3 md:divide-x md:divide-y-0"
+                className="mt-10 grid overflow-hidden rounded-[1.5rem] border border-white/14 bg-white/10 backdrop-blur md:grid-cols-3"
               >
-                {metrics.map((item) => (
-                  <div key={item.label} className="flex items-end justify-between gap-5 px-6 py-5">
+                {metrics.map((item, index) => (
+                  <div
+                    key={item.label}
+                    className={cn(
+                      "flex items-end justify-between gap-5 border-white/12 px-6 py-5",
+                      index > 0 && "border-t",
+                      index < 3 && "md:border-t-0",
+                      index >= 3 && "md:border-t",
+                      index % 3 !== 0 && "md:border-l",
+                    )}
+                  >
                     <span className="text-3xl font-black leading-none md:text-4xl">{item.value}</span>
                     <span className="max-w-28 text-right text-sm font-semibold leading-5 text-white/68">{item.label}</span>
                   </div>
