@@ -105,6 +105,7 @@
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 8rem;
+    overflow-anchor: none;
     background: var(--void);
   }
 
