@@ -3,18 +3,14 @@ import { Link } from "wouter";
 import { CloudOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { GridBackground } from "@/components/grid-background";
-import { motion } from "framer-motion";
 
 export default function NotFound() {
   return (
     <div className="min-h-screen w-full flex flex-col items-center justify-center bg-background text-foreground relative overflow-hidden font-sans">
       <GridBackground />
 
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="relative z-10 w-full max-w-lg mx-4 flex flex-col items-center text-center"
+      <div
+        className="relative z-10 mx-4 flex w-full max-w-lg animate-in flex-col items-center text-center fade-in slide-in-from-bottom-5 duration-500"
       >
         <div className="mb-8 inline-flex p-4 rounded-2xl bg-blue-500/10 border border-blue-500/20">
           <CloudOff className="h-16 w-16 text-blue-500" />
@@ -35,7 +31,7 @@ export default function NotFound() {
             返回首页
           </Button>
         </Link>
-      </motion.div>
+      </div>
     </div>
   );
 }
