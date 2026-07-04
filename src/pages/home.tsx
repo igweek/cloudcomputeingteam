@@ -565,8 +565,8 @@ export default function Home() {
                     </span>
                   </span>
                   <span className="mt-3 block pb-2">
-                    <span className="block text-[clamp(1.7rem,3.8vw,3.2rem)] leading-[1.1] text-white/90">
-                      人工智能发展的重要基础设施
+                    <span className="block text-[clamp(1.35rem,3vw,2.7rem)] leading-[1.1] text-white/90">
+                      Cloudcomputing
                     </span>
                   </span>
                 </h1>
