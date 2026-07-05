@@ -704,8 +704,8 @@ export default function Home() {
                 >
                   <img
                     data-parallax-image
-                    src="/cloud-lab-hero.webp"
-                    alt="云计算实训中心"
+                    src="/cloud-infrastructure-digital-twin.webp"
+                    alt="云基础设施数字孪生空间"
                     loading="lazy"
                     decoding="async"
                     className="absolute -top-[5%] left-0 h-[110%] w-full object-cover will-change-transform"
