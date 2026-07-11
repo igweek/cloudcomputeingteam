@@ -462,7 +462,7 @@ export default function Home() {
         <nav
           data-site-nav
           className={`fixed inset-x-0 z-50 px-4 transition-all duration-300 ${
-            isScrolled ? "top-2.5 md:top-3" : "top-4 md:top-7"
+            isScrolled ? "top-2.5 md:top-3" : "top-3 md:top-7"
           }`}
         >
           <div
@@ -475,7 +475,7 @@ export default function Home() {
             <div
               data-nav-bar
               className={`flex items-center justify-between px-5 transition-all duration-300 md:px-7 ${
-                isScrolled ? "h-[60px]" : "h-[72px]"
+                isScrolled ? "h-[54px] md:h-[60px]" : "h-[60px] md:h-[72px]"
               }`}
             >
             <button
@@ -544,7 +544,7 @@ export default function Home() {
         </nav>
 
         <main className="relative z-10">
-          <section id="hero" className="relative min-h-[100svh] overflow-hidden">
+          <section id="hero" className="relative min-h-[100svh] overflow-hidden pb-8 sm:pb-0">
             <div data-hero-orb className="absolute inset-0 z-0 will-change-transform" aria-hidden="true">
               <Orb
                 hue={0}
@@ -556,7 +556,7 @@ export default function Home() {
             </div>
             <div className="pointer-events-none absolute inset-0 z-[1] bg-[rgba(31,30,67,0.08)]" />
 
-            <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-[1040px] flex-col items-center justify-center px-5 pb-24 pt-32 text-center md:px-8">
+            <div className="relative z-10 mx-auto flex min-h-[calc(100svh-160px)] max-w-[1040px] flex-col items-center justify-center px-5 pb-8 pt-28 text-center sm:min-h-[100svh] sm:pb-44 sm:pt-32 md:px-8">
               <div data-hero-text className="flex flex-col items-center will-change-[transform,filter,opacity]">
                 <h1 className="max-w-[880px] text-balance text-[clamp(2.4rem,5.1vw,4.6rem)] font-semibold leading-[1.05] tracking-[-0.05em]">
                   <span className="block pb-2">
@@ -585,15 +585,15 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="absolute inset-x-5 bottom-5 z-10 mx-auto max-w-[1040px] rounded-2xl border border-white/10 bg-[#18172f]/5 py-5 shadow-[0_8px_24px_rgba(9,8,35,0.08)] backdrop-blur-[3px] backdrop-saturate-125">
-              <p className="mb-5 text-center text-[10px] font-bold uppercase tracking-[0.22em] text-white/26">
+            <div className="relative z-10 mx-4 -mt-2 max-w-[1040px] rounded-2xl border border-white/10 bg-[#18172f]/5 py-3 shadow-[0_8px_24px_rgba(9,8,35,0.08)] backdrop-blur-[3px] backdrop-saturate-125 sm:absolute sm:inset-x-5 sm:bottom-5 sm:mx-auto sm:mt-0 sm:py-5">
+              <p className="mb-3 text-center text-[9px] font-bold uppercase tracking-[0.22em] text-white/26 sm:mb-5 sm:text-[10px]">
                 云计算专业
               </p>
-              <div className="mx-auto grid max-w-[1040px] grid-cols-2 gap-5 px-5 text-center sm:grid-cols-3 md:grid-cols-6 md:px-8">
+              <div className="mx-auto grid max-w-[1040px] grid-cols-3 gap-x-3 gap-y-2 px-3 text-center sm:gap-5 sm:px-5 md:grid-cols-6 md:px-8">
                 {metrics.map((item) => (
-                  <span key={item.label} className="grid gap-1 transition hover:text-white">
-                    <span className="text-xs font-semibold text-white/58 md:text-sm">{item.value}</span>
-                    <span className="text-[10px] text-white/28">{item.label}</span>
+                  <span key={item.label} className="grid gap-0.5 transition hover:text-white sm:gap-1">
+                    <span className="text-[11px] font-semibold text-white/58 md:text-sm">{item.value}</span>
+                    <span className="text-[9px] leading-tight text-white/28 sm:text-[10px]">{item.label}</span>
                   </span>
                 ))}
               </div>
