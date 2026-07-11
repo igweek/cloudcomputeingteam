@@ -544,7 +544,7 @@ export default function Home() {
         </nav>
 
         <main className="relative z-10">
-          <section id="hero" className="relative min-h-[100svh] overflow-hidden">
+          <section id="hero" className="relative min-h-[100svh] overflow-hidden pb-8 sm:pb-0">
             <div data-hero-orb className="absolute inset-0 z-0 will-change-transform" aria-hidden="true">
               <Orb
                 hue={0}
@@ -556,7 +556,7 @@ export default function Home() {
             </div>
             <div className="pointer-events-none absolute inset-0 z-[1] bg-[rgba(31,30,67,0.08)]" />
 
-            <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-[1040px] flex-col items-center justify-center px-5 pb-40 pt-28 text-center sm:pb-44 sm:pt-32 md:px-8">
+            <div className="relative z-10 mx-auto flex min-h-[calc(100svh-160px)] max-w-[1040px] flex-col items-center justify-center px-5 pb-8 pt-28 text-center sm:min-h-[100svh] sm:pb-44 sm:pt-32 md:px-8">
               <div data-hero-text className="flex flex-col items-center will-change-[transform,filter,opacity]">
                 <h1 className="max-w-[880px] text-balance text-[clamp(2.4rem,5.1vw,4.6rem)] font-semibold leading-[1.05] tracking-[-0.05em]">
                   <span className="block pb-2">
@@ -585,7 +585,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="absolute inset-x-4 bottom-4 z-10 mx-auto max-w-[1040px] rounded-2xl border border-white/10 bg-[#18172f]/5 py-3 shadow-[0_8px_24px_rgba(9,8,35,0.08)] backdrop-blur-[3px] backdrop-saturate-125 sm:inset-x-5 sm:bottom-5 sm:py-5">
+            <div className="relative z-10 mx-4 -mt-2 max-w-[1040px] rounded-2xl border border-white/10 bg-[#18172f]/5 py-3 shadow-[0_8px_24px_rgba(9,8,35,0.08)] backdrop-blur-[3px] backdrop-saturate-125 sm:absolute sm:inset-x-5 sm:bottom-5 sm:mx-auto sm:mt-0 sm:py-5">
               <p className="mb-3 text-center text-[9px] font-bold uppercase tracking-[0.22em] text-white/26 sm:mb-5 sm:text-[10px]">
                 云计算专业
               </p>
