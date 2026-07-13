@@ -819,51 +819,38 @@ export default function Home() {
 
               <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
                 {careerPath.map((item) => (
-                  <article
-                    key={item.role}
-                    data-stagger-item
-                    onPointerEnter={(event) => {
-                      event.currentTarget.style.setProperty("--lift", "-8px");
-                    }}
-                    onPointerMove={(event) => {
-                      const card = event.currentTarget;
-                      const rect = card.getBoundingClientRect();
-                      const pointerX = (event.clientX - rect.left) / rect.width - 0.5;
-                      const pointerY = (event.clientY - rect.top) / rect.height - 0.5;
-
-                      card.style.setProperty("--tilt-y", `${pointerX * 7}deg`);
-                      card.style.setProperty("--tilt-x", `${pointerY * -6}deg`);
-                      card.style.setProperty("--glow-x", `${(pointerX + 0.5) * 100}%`);
-                      card.style.setProperty("--glow-y", `${(pointerY + 0.5) * 100}%`);
-                    }}
-                    onPointerLeave={(event) => {
-                      const card = event.currentTarget;
-
-                      card.style.setProperty("--lift", "0px");
-                      card.style.setProperty("--tilt-x", "0deg");
-                      card.style.setProperty("--tilt-y", "0deg");
-                      card.style.setProperty("--glow-x", "50%");
-                      card.style.setProperty("--glow-y", "28%");
-                    }}
-                    className="group/card relative min-h-[220px] overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] p-6 transition-[transform,border-color,background-color,box-shadow] duration-500 ease-out will-change-transform hover:border-orange/28 hover:bg-white/[0.055] hover:shadow-[0_22px_70px_rgba(7,6,30,0.22)]"
-                    style={{
-                      transform:
-                        "perspective(900px) translate3d(0,var(--lift,0px),0) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg))",
-                      transformStyle: "preserve-3d",
-                    }}
-                  >
-                    <div
-                      className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover/card:opacity-100"
-                      style={{
-                        background:
-                          "radial-gradient(circle at var(--glow-x,50%) var(--glow-y,28%), rgba(255,255,255,0.12), transparent 34%)",
+                  <div key={item.role} data-stagger-item className="[perspective:900px]">
+                    <article
+                      onPointerEnter={(event) => {
+                        event.currentTarget.style.setProperty("--lift", "-8px");
                       }}
-                    />
-                    <div className="relative z-10" style={{ transform: "translateZ(22px)" }}>
+                      onPointerMove={(event) => {
+                        const card = event.currentTarget;
+                        const rect = card.getBoundingClientRect();
+                        const pointerX = (event.clientX - rect.left) / rect.width - 0.5;
+                        const pointerY = (event.clientY - rect.top) / rect.height - 0.5;
+
+                        card.style.setProperty("--tilt-y", `${pointerX * 9}deg`);
+                        card.style.setProperty("--tilt-x", `${pointerY * -8}deg`);
+                      }}
+                      onPointerLeave={(event) => {
+                        const card = event.currentTarget;
+
+                        card.style.setProperty("--lift", "0px");
+                        card.style.setProperty("--tilt-x", "0deg");
+                        card.style.setProperty("--tilt-y", "0deg");
+                      }}
+                      className="min-h-[220px] rounded-2xl border border-white/10 bg-white/[0.035] p-6 transition-[transform,border-color,background-color,box-shadow] duration-300 ease-out will-change-transform hover:border-orange/28 hover:bg-white/[0.055] hover:shadow-[0_22px_70px_rgba(7,6,30,0.18)]"
+                      style={{
+                        transform:
+                          "translate3d(0,var(--lift,0px),0) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg))",
+                        transformStyle: "preserve-3d",
+                      }}
+                    >
                       <h3 className="text-xl font-black tracking-[-0.025em] text-white">{item.role}</h3>
                       <p className="mt-5 text-sm leading-7 text-white/50">{item.text}</p>
-                    </div>
-                  </article>
+                    </article>
+                  </div>
                 ))}
               </div>
 
