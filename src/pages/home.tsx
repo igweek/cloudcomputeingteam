@@ -24,7 +24,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import Orb from "@/components/orb";
+import SoftAurora from "@/components/soft-aurora";
 import { useToast } from "@/hooks/use-toast";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -128,24 +128,20 @@ const practiceProjects = [
 
 const careerPath = [
   {
-    role: "云支持工程师",
-    years: "入门级 • 0-2 年",
-    text: "提供一线/二线技术支持，处理云平台使用、服务器运行和基础网络问题。",
+    role: "云平台运维方向",
+    text: "面向企业数据中心、云平台和服务器环境，参与系统巡检、资源管理、故障处理和基础运维工作。",
   },
   {
-    role: "基础设施工程师",
-    years: "中级 • 2-4 年",
-    text: "设计并配置云资源，负责虚拟化平台、网络、存储和高可用基础设施。",
+    role: "云服务部署方向",
+    text: "围绕虚拟化、容器和云服务平台，完成应用部署、环境配置、服务发布和基础自动化脚本编写。",
   },
   {
-    role: "DevOps 工程师",
-    years: "高级 • 4-6 年",
-    text: "实施 CI/CD 与自动化流程，建设持续交付、监控告警和稳定性体系。",
+    role: "网络与安全运维方向",
+    text: "参与云网络配置、安全策略设置、账号权限管理和监控告警处理，保障基础设施稳定运行。",
   },
   {
-    role: "云架构师",
-    years: "专家级 • 6+ 年",
-    text: "主导企业级云战略，规划系统架构、成本治理、安全体系和平台演进。",
+    role: "系统集成与技术支持方向",
+    text: "面向政企、通信、软件与智能物联网等行业场景，承担项目实施、设备调试和客户技术支持工作。",
   },
 ];
 
@@ -183,7 +179,7 @@ const faqs = [
   },
   {
     q: "云计算专业就业前景怎么样？",
-    a: "随着企业数字化转型，大量业务系统正在向云平台迁移，对云计算技术人才的需求持续增长。互联网企业、通信运营商、金融机构以及各类企事业单位都需要云计算相关技术人员，因此整体就业前景较为广阔。",
+    a: "随着企业信息化和云平台建设的持续推进，服务器管理、云平台运维、系统部署、网络配置和技术支持等岗位对实践型技术人才有稳定需求。学生毕业后可结合自身能力和岗位要求，在软件与信息技术服务企业、通信运营商、系统集成单位及企事业单位信息化部门发展。",
   },
   {
     q: "云计算和软件工程有什么区别？",
@@ -280,16 +276,16 @@ export default function Home() {
         return;
       }
 
-      const heroOrb = root.querySelector<HTMLElement>("[data-hero-orb]");
+      const heroAurora = root.querySelector<HTMLElement>("[data-hero-aurora]");
       const heroText = root.querySelector<HTMLElement>("[data-hero-text]");
       const heroCta = root.querySelector<HTMLElement>("[data-hero-cta]");
       const siteNav = root.querySelector<HTMLElement>("[data-site-nav]");
 
-      gsap.set(heroOrb, { autoAlpha: 0, scale: 0.76, filter: "blur(22px)" });
+      gsap.set(heroAurora, { autoAlpha: 0, scale: 1.03, filter: "blur(14px)" });
       gsap.set(heroText, {
         autoAlpha: 0,
-        y: 34,
-        scale: 0.965,
+        y: 38,
+        scale: 0.975,
         filter: "blur(14px)",
         transformOrigin: "50% 60%",
       });
@@ -305,8 +301,8 @@ export default function Home() {
 
       openingTimeline
         .to(
-          heroOrb,
-          { autoAlpha: 1, scale: 1, filter: "blur(0px)", duration: 1.8, ease: "expo.out" },
+          heroAurora,
+          { autoAlpha: 1, scale: 1, filter: "blur(0px)", duration: 1.85, ease: "expo.out" },
           0,
         )
         .to(
@@ -461,35 +457,35 @@ export default function Home() {
 
         <nav
           data-site-nav
-          className={`fixed inset-x-0 z-50 px-4 transition-all duration-300 ${
-            isScrolled ? "top-2.5 md:top-3" : "top-3 md:top-7"
+          className={`fixed inset-x-0 z-50 px-4 transition-all duration-300 md:px-8 ${
+            isScrolled ? "top-2.5 md:top-4" : "top-4 md:top-7"
           }`}
         >
           <div
-            className={`mx-auto max-w-[1120px] overflow-hidden rounded-[1.45rem] border transition duration-300 ${
+            className={`mx-auto max-w-[1120px] overflow-hidden rounded-[1.35rem] border transition duration-300 ${
               isScrolled
-                ? "border-white/10 bg-[#18172f]/5 shadow-[0_8px_24px_rgba(9,8,35,0.08)] backdrop-blur-[3px] backdrop-saturate-125"
-                : "border-[#7770bd]/20 bg-[#2a2558]/38 shadow-[0_12px_40px_rgba(17,16,43,0.16)] backdrop-blur-lg backdrop-saturate-150"
+                ? "border-white/10 bg-[#100e16]/42 shadow-[0_12px_42px_rgba(0,0,0,0.18)] backdrop-blur-xl backdrop-saturate-125"
+                : "border-white/12 bg-[#17131e]/72 shadow-[0_18px_60px_rgba(0,0,0,0.28)] backdrop-blur-2xl backdrop-saturate-150"
             }`}
           >
             <div
               data-nav-bar
-              className={`flex items-center justify-between px-5 transition-all duration-300 md:px-7 ${
-                isScrolled ? "h-[54px] md:h-[60px]" : "h-[60px] md:h-[72px]"
+              className={`flex items-center justify-between px-4 transition-all duration-300 md:px-6 ${
+                isScrolled ? "h-[54px] md:h-[62px]" : "h-[58px] md:h-[70px]"
               }`}
             >
             <button
-              className="group flex items-center gap-3 text-left"
+              className="group flex min-w-0 items-center gap-2.5 text-left md:gap-3"
               onClick={() => scrollTo("hero")}
               aria-label="回到首页"
             >
-              <span className="flex h-8 w-8 items-center justify-center rounded-full border border-white/15 bg-white/[0.04]">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/14 bg-white/[0.035] md:h-9 md:w-9">
                 <Atom className="h-4 w-4 text-white" strokeWidth={1.8} />
               </span>
-              <span className="text-sm font-black tracking-[-0.02em] text-white">云计算专业</span>
+              <span className="truncate text-sm font-black tracking-[-0.02em] text-white md:text-base">云计算专业</span>
             </button>
 
-            <div className="hidden items-center gap-7 text-xs font-medium text-white/52 lg:flex">
+            <div className="hidden items-center gap-8 text-sm font-semibold text-white/42 lg:flex">
               {navItems.map((item) => (
                 <button key={item.id} onClick={() => scrollTo(item.id)} className="transition hover:text-white">
                   {item.label}
@@ -499,14 +495,14 @@ export default function Home() {
 
             <div className="flex items-center gap-2">
               <Button
-                className="h-10 rounded-xl bg-white px-5 text-xs font-bold text-[#17152f] shadow-none hover:bg-white/88"
+                className="hidden h-10 rounded-xl bg-white px-5 text-xs font-bold text-[#16121d] shadow-none hover:bg-white/88 sm:inline-flex md:h-11 md:px-6"
                 onClick={() => scrollTo("contact")}
               >
                 联系我们
                 <ArrowRight className="h-3.5 w-3.5" />
               </Button>
               <button
-                className="ml-1 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 lg:hidden"
+                className="ml-1 flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.025] lg:hidden"
                 onClick={() => setMenuOpen((open) => !open)}
                 aria-label={menuOpen ? "关闭导航" : "打开导航"}
                 aria-expanded={menuOpen}
@@ -544,48 +540,71 @@ export default function Home() {
         </nav>
 
         <main className="relative z-10">
-          <section id="hero" className="relative min-h-[100svh] overflow-hidden pb-8 sm:pb-0">
-            <div data-hero-orb className="absolute inset-0 z-0 will-change-transform" aria-hidden="true">
-              <Orb
-                hue={0}
-                hoverIntensity={1.2}
-                rotateOnHover
-                forceHoverState={false}
-                backgroundColor="#1f1e43"
+          <section
+            id="hero"
+            className="relative min-h-[100svh] overflow-hidden bg-[radial-gradient(circle_at_50%_38%,rgba(96,89,190,0.24),transparent_34%),radial-gradient(circle_at_50%_74%,rgba(55,132,203,0.12),transparent_35%),linear-gradient(180deg,#252252_0%,#1f1e43_48%,#24214b_100%)] pb-8 sm:pb-0"
+          >
+            <div
+              data-hero-aurora
+              className="pointer-events-none absolute inset-0 z-0 will-change-[transform,filter,opacity]"
+              aria-hidden="true"
+            >
+              <SoftAurora
+                speed={0.42}
+                scale={1.55}
+                brightness={0.78}
+                color1="#6ea8ff"
+                color2="#ff79d8"
+                noiseFrequency={1.55}
+                noiseAmplitude={0.82}
+                bandHeight={0.47}
+                bandSpread={1.05}
+                octaveDecay={0.16}
+                layerOffset={0.42}
+                colorSpeed={0.42}
+                enableMouseInteraction={false}
               />
             </div>
-            <div className="pointer-events-none absolute inset-0 z-[1] bg-[rgba(31,30,67,0.08)]" />
+            <div className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(circle_at_50%_52%,rgba(255,255,255,0.045),transparent_30%),linear-gradient(180deg,rgba(31,30,67,0.28)_0%,rgba(31,30,67,0.02)_46%,rgba(36,33,75,0.7)_100%)]" />
+            <div className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-44 bg-gradient-to-b from-[#1f1e43] via-[#1f1e43]/76 to-transparent" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-56 bg-gradient-to-t from-[#24214b] via-[#24214b]/72 to-transparent" />
 
-            <div className="relative z-10 mx-auto flex min-h-[calc(100svh-160px)] max-w-[1040px] flex-col items-center justify-center px-5 pb-8 pt-28 text-center sm:min-h-[100svh] sm:pb-44 sm:pt-32 md:px-8">
+            <div className="relative z-10 mx-auto flex min-h-[calc(100svh-150px)] max-w-[1080px] flex-col items-center justify-center px-5 pb-10 pt-32 text-center sm:min-h-[100svh] sm:pb-44 sm:pt-36 md:px-8">
               <div data-hero-text className="flex flex-col items-center will-change-[transform,filter,opacity]">
-                <h1 className="max-w-[880px] text-balance text-[clamp(2.4rem,5.1vw,4.6rem)] font-semibold leading-[1.05] tracking-[-0.05em]">
-                  <span className="block pb-2">
-                    <span className="block">
-                      云计算专业
-                    </span>
-                  </span>
-                  <span className="mt-3 block pb-2">
-                    <span className="block text-[clamp(1.35rem,3vw,2.7rem)] leading-[1.1] text-white/90">
-                      智能时代的云端底座
-                    </span>
+                <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-white/12 bg-[#15111d]/54 p-1.5 pr-5 text-sm font-bold text-white/48 shadow-[0_10px_36px_rgba(0,0,0,0.22)] backdrop-blur-xl">
+                  <span className="rounded-full bg-white px-3.5 py-1.5 text-xs font-black text-[#17131e]">NEW</span>
+                  <span className="hidden sm:inline">云计算专业</span>
+                  <span className="text-white/35 sm:hidden">专业介绍</span>
+                </div>
+                <h1 className="max-w-[960px] text-balance text-[clamp(2.55rem,6.2vw,5.2rem)] font-semibold leading-[1.02] tracking-[-0.058em] text-white">
+                  <span className="block">云计算专业</span>
+                  <span className="mt-3 block text-[clamp(1.85rem,4.6vw,4.35rem)] text-white/92">
+                    智能时代的云端底座
                   </span>
                 </h1>
-                <p className="mt-7 max-w-2xl text-sm leading-7 text-white/48 md:text-base">
+                <p className="mt-7 max-w-2xl text-balance text-base leading-7 text-white/48 md:text-lg md:leading-8">
                   构建面向未来的云原生技术体系
                 </p>
               </div>
-              <div data-hero-cta className="mt-8">
+              <div data-hero-cta className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
                 <Button
                   onClick={() => scrollTo("contact")}
-                  className="h-11 rounded-xl bg-white px-6 text-sm font-bold text-void shadow-none hover:bg-white/88"
+                  className="h-12 rounded-xl bg-white px-7 text-sm font-black text-[#17131e] shadow-[0_16px_44px_rgba(255,255,255,0.12)] hover:bg-white/88"
                 >
                   联系我们
                   <ArrowRight className="h-4 w-4" />
                 </Button>
+                <Button
+                  variant="outline"
+                  onClick={() => scrollTo("position")}
+                  className="h-12 rounded-xl border-white/12 bg-[#15111d]/42 px-7 text-sm font-bold text-white/54 shadow-none backdrop-blur-xl hover:bg-white/8 hover:text-white"
+                >
+                  了解专业
+                </Button>
               </div>
             </div>
 
-            <div className="relative z-10 mx-4 -mt-2 max-w-[1040px] rounded-2xl border border-white/10 bg-[#18172f]/5 py-3 shadow-[0_8px_24px_rgba(9,8,35,0.08)] backdrop-blur-[3px] backdrop-saturate-125 sm:absolute sm:inset-x-5 sm:bottom-5 sm:mx-auto sm:mt-0 sm:py-5">
+            <div className="relative z-10 mx-4 -mt-2 max-w-[1040px] rounded-2xl border border-white/10 bg-[#15111d]/30 py-3 shadow-[0_14px_48px_rgba(0,0,0,0.16)] backdrop-blur-xl backdrop-saturate-125 sm:absolute sm:inset-x-5 sm:bottom-5 sm:mx-auto sm:mt-0 sm:py-5">
               <p className="mb-3 text-center text-[9px] font-bold uppercase tracking-[0.22em] text-white/26 sm:mb-5 sm:text-[10px]">
                 云计算专业
               </p>
@@ -793,21 +812,20 @@ export default function Home() {
               <SectionHeading
                 englishTitle="Career"
                 eyebrow="就业前景"
-                title="就业面广发展空间大"
-                text="随着云计算、大数据与人工智能技术的快速发展，越来越多的企业将业务系统部署到云平台，对云计算技术人才的需求持续增长。毕业生可在互联网企业、软件公司、金融机构、政府信息中心以及各类企事业单位从事云平台运维、云应用开发、系统部署与自动化运维等工作。"
+                title="面向产业需求的多元就业方向"
+                text="本专业以云平台运维、系统部署、网络安全与技术支持等岗位能力为培养重点。毕业生可面向互联网企业、软件与信息技术服务企业、通信运营商、系统集成单位以及各类企事业单位信息化部门，从事云平台运维、服务器管理、应用部署、网络配置和技术服务等工作。"
                 align="center"
               />
 
-              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+              <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
                 {careerPath.map((item) => (
                   <article
                     key={item.role}
                     data-stagger-item
-                    className="rounded-[1.5rem] border border-[#7770bd]/22 bg-panel p-7 transition hover:border-orange/30 hover:bg-panel-hover"
+                    className="min-h-[220px] rounded-2xl border border-white/10 bg-white/[0.035] p-6 transition duration-300 hover:border-orange/28 hover:bg-white/[0.055]"
                   >
-                    <span className="text-4xl font-semibold tracking-[-0.055em] text-orange">{item.years}</span>
-                    <h3 className="mt-12 text-xl font-black">{item.role}</h3>
-                    <p className="mt-3 text-sm leading-7 text-white/42">{item.text}</p>
+                    <h3 className="text-xl font-black tracking-[-0.025em] text-white">{item.role}</h3>
+                    <p className="mt-5 text-sm leading-7 text-white/50">{item.text}</p>
                   </article>
                 ))}
               </div>
