@@ -830,8 +830,8 @@ export default function Home() {
                         const pointerX = (event.clientX - rect.left) / rect.width - 0.5;
                         const pointerY = (event.clientY - rect.top) / rect.height - 0.5;
 
-                        card.style.setProperty("--tilt-y", `${pointerX * 9}deg`);
-                        card.style.setProperty("--tilt-x", `${pointerY * -8}deg`);
+                        card.style.setProperty("--tilt-y", `${pointerX * 15}deg`);
+                        card.style.setProperty("--tilt-x", `${pointerY * -13}deg`);
                       }}
                       onPointerLeave={(event) => {
                         const card = event.currentTarget;
